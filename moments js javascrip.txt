@@ -1,0 +1,36 @@
+Format Dates
+moment().format('MMMM Do YYYY, h:mm:ss a'); // August 12th 2021, 9:24:49 am
+moment().format('dddd');                    // Thursday
+moment().format("MMM Do YY");               // Aug 12th 21
+moment().format('YYYY [escaped] YYYY');     // 2021 escaped 2021
+moment().format();                          // 2021-08-12T09:24:49-06:00
+
+Relative Time
+moment("20111031", "YYYYMMDD").fromNow(); // 10 years ago
+moment("20120620", "YYYYMMDD").fromNow(); // 9 years ago
+moment().startOf('day').fromNow();        // 9 hours ago
+moment().endOf('day').fromNow();          // in 15 hours
+moment().startOf('hour').fromNow();       // 25 minutes ago
+
+Calendar Time
+moment().subtract(10, 'days').calendar(); // 08/02/2021
+moment().subtract(6, 'days').calendar();  // Last Friday at 9:24 AM
+moment().subtract(3, 'days').calendar();  // Last Monday at 9:24 AM
+moment().subtract(1, 'days').calendar();  // Yesterday at 9:24 AM
+moment().calendar();                      // Today at 9:24 AM
+moment().add(1, 'days').calendar();       // Tomorrow at 9:24 AM
+moment().add(3, 'days').calendar();       // Sunday at 9:24 AM
+moment().add(10, 'days').calendar();      // 08/22/2021
+
+Multiple Locale Support
+moment.locale();         // en
+moment().format('LT');   // 9:24 AM
+moment().format('LTS');  // 9:24:49 AM
+moment().format('L');    // 08/12/2021
+moment().format('l');    // 8/12/2021
+moment().format('LL');   // August 12, 2021
+moment().format('ll');   // Aug 12, 2021
+moment().format('LLL');  // August 12, 2021 9:24 AM
+moment().format('lll');  // Aug 12, 2021 9:24 AM
+moment().format('LLLL'); // Thursday, August 12, 2021 9:24 AM
+moment().format('llll');
